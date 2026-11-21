@@ -1,0 +1,55 @@
+/* ==========================================================
+   Tipy: číslovaný seznam tipů
+   Načítá se jen na stránce tipy.html, společné styly jsou v globals.css.
+   ========================================================== */
+
+/* ==========================================================
+   Komponenta: číslovaný seznam tipů
+   ========================================================== */
+
+.tips {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: tip;
+}
+
+.tip {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 4.25rem;
+    background-color: #f3e0b0;
+    border: 3px solid #9a4f1c;
+    border-radius: 6px;
+    counter-increment: tip;
+}
+
+/* Číslo tipu ve čtverečku */
+.tip::before {
+    content: counter(tip);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    text-align: center;
+    color: #fdf3d6;
+    background-color: #3f7d20;
+    border: 2px solid #5c2e0e;
+}
+
+.tip__title {
+    margin: 0 0 0.25rem 0;
+    padding-bottom: 0;
+    font-size: 1.3rem;
+    border-bottom: 0;
+}
+
+.tip__text {
+    margin: 0;
+}
+

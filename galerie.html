@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Galerie obrázků ze hry Stardew Valley: festivaly, městečko Pelican Town a ostrov Ginger Island.">
+    <meta name="keywords" content="Stardew Valley, galerie, obrázky, festivaly, Pelican Town">
+    <meta name="author" content="Lukáš Pop">
+    <title>Galerie | Stardew Valley – fanouškovský průvodce</title>
+    <link rel="icon" href="images/ui/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&amp;display=swap">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/pages/galerie.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+
+    <!-- ===== Komponenta: hlavička (stejná na všech stránkách) ===== -->
+    <header class="header">
+        <div class="page header__inner">
+            <a class="header__logo-link" href="./">
+                <img class="header__logo" src="images/ui/logo.png" width="399" height="187" alt="Stardew Valley – fanouškovský průvodce">
+            </a>
+            <p class="header__tagline">Fanouškovský průvodce údolím</p>
+        </div>
+        <!-- ===== Komponenta: hlavní navigace (mění se jen aktivní položka) ===== -->
+        <nav class="nav" aria-label="Hlavní navigace">
+            <ul class="page nav__list">
+                <li><a class="nav__link" href="./">Úvod</a></li>
+                <li><a class="nav__link" href="o-hre.html">O hře</a></li>
+                <li><a class="nav__link" href="vesnicane.html">Vesničané</a></li>
+                <li><a class="nav__link" href="farmareni.html">Farmaření</a></li>
+                <li><a class="nav__link" href="tipy.html">Tipy</a></li>
+                <li><a class="nav__link nav__link--active" href="galerie.html" aria-current="page">Galerie</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===== Konec hlavičky ===== -->
+
+    <div class="page layout">
+        <main class="layout__main panel" id="obsah">
+            <h1>Galerie</h1>
+
+            <p class="lead">
+                Vybral jsem pro vás pár obrázků z údolí: festivaly, které se během roku
+                konají, a místa, kam se během hry podíváte.
+            </p>
+
+            <ul class="gallery">
+                <li class="gallery__item">
+                    <figure class="gallery__figure">
+                        <img class="gallery__img" src="images/galerie/velikonocni-slavnost.jpg" width="560" height="408" alt="Obyvatelé Pelican Town na náměstí během Velikonoční slavnosti, stoly s jídlem a košíky s vajíčky">
+                        <figcaption class="gallery__caption">
+                            <span class="gallery__title">Velikonoční slavnost</span>
+                            Jarní festival, na kterém se hledají vajíčka.
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="gallery__item">
+                    <figure class="gallery__figure">
+                        <img class="gallery__img" src="images/galerie/luau.jpg" width="560" height="364" alt="Letní festival Luau na pláži, uprostřed velký hrnec na polévku a stoly s jídlem">
+                        <figcaption class="gallery__caption">
+                            <span class="gallery__title">Luau</span>
+                            Letní slavnost na pláži, kde se vaří společná polévka.
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="gallery__item">
+                    <figure class="gallery__figure">
+                        <img class="gallery__img" src="images/galerie/ledovy-festival.jpg" width="560" height="315" alt="Zimní Ledový festival, obyvatelé stojí kolem zamrzlého jezera s otvory pro rybaření">
+                        <figcaption class="gallery__caption">
+                            <span class="gallery__title">Ledový festival</span>
+                            Zimní soutěž v rybaření na zamrzlém jezeře.
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="gallery__item">
+                    <figure class="gallery__figure">
+                        <img class="gallery__img" src="images/galerie/komunitni-centrum.jpg" width="800" height="450" alt="Hráč slaví před opraveným komunitním centrem, kolem létají barevné balónky">
+                        <figcaption class="gallery__caption">
+                            <span class="gallery__title">Komunitní centrum</span>
+                            Takhle se slaví, když dokončíte všechny balíčky.
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="gallery__item">
+                    <figure class="gallery__figure">
+                        <img class="gallery__img" src="images/galerie/pelican-town.jpg" width="560" height="513" alt="Mapa městečka Pelican Town s řekou, náměstím a domy obyvatel">
+                        <figcaption class="gallery__caption">
+                            <span class="gallery__title">Pelican Town</span>
+                            Městečko, kde bydlí všichni vesničané.
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="gallery__item">
+                    <figure class="gallery__figure">
+                        <img class="gallery__img" src="images/galerie/ginger-island.jpg" width="560" height="560" alt="Západní část ostrova Ginger Island s pláží, palmami a vrakem lodi">
+                        <figcaption class="gallery__caption">
+                            <span class="gallery__title">Ginger Island</span>
+                            Tropický ostrov, který přibyl v aktualizaci 1.5.
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </main>
+    </div>
+
+    <!-- ===== Komponenta: patička (stejná na všech stránkách) ===== -->
+    <footer class="footer">
+        <div class="page footer__inner">
+            <img class="footer__icon pixelated" src="images/ui/junimo.png" width="96" height="96" alt="Junimo">
+            <div>
+                <p class="footer__title">Stardew Valley – fanouškovský průvodce</p>
+                <p class="footer__text">Neoficiální fanouškovský web vytvořený jako semestrální práce předmětu 4IZ268 na VŠE. Hra Stardew Valley patří studiu ConcernedApe, web s ním není nijak spojen.</p>
+                <p class="footer__text"><a class="footer__link" href="zdroje.html">Zdroje obrázků a informací</a></p>
+                <p class="footer__text">&copy; 2026 Autor: <a class="footer__link" href="https://lukaspop.com/">Lukáš Pop</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

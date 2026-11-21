@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Přehled plodin ve Stardew Valley podle ročních období: doba růstu, opakovaná sklizeň, cena semínek a prodejní cena.">
+    <meta name="keywords" content="Stardew Valley, plodiny, farmaření, jaro, léto, podzim, zima">
+    <meta name="author" content="Lukáš Pop">
+    <title>Farmaření | Stardew Valley – fanouškovský průvodce</title>
+    <link rel="icon" href="images/ui/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&amp;display=swap">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/pages/farmareni.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+
+    <!-- ===== Komponenta: hlavička (stejná na všech stránkách) ===== -->
+    <header class="header">
+        <div class="page header__inner">
+            <a class="header__logo-link" href="./">
+                <img class="header__logo" src="images/ui/logo.png" width="399" height="187" alt="Stardew Valley – fanouškovský průvodce">
+            </a>
+            <p class="header__tagline">Fanouškovský průvodce údolím</p>
+        </div>
+        <!-- ===== Komponenta: hlavní navigace (mění se jen aktivní položka) ===== -->
+        <nav class="nav" aria-label="Hlavní navigace">
+            <ul class="page nav__list">
+                <li><a class="nav__link" href="./">Úvod</a></li>
+                <li><a class="nav__link" href="o-hre.html">O hře</a></li>
+                <li><a class="nav__link" href="vesnicane.html">Vesničané</a></li>
+                <li><a class="nav__link nav__link--active" href="farmareni.html" aria-current="page">Farmaření</a></li>
+                <li><a class="nav__link" href="tipy.html">Tipy</a></li>
+                <li><a class="nav__link" href="galerie.html">Galerie</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===== Konec hlavičky ===== -->
+
+    <div class="page layout">
+        <main class="layout__main panel" id="obsah">
+            <h1>Farmaření a roční období</h1>
+
+            <p class="lead">
+                Rok ve Stardew Valley má čtyři roční období a každé z nich trvá 28 dní.
+                Většina plodin roste jen v jednom z nich a hned první den nové sezóny
+                uschne, proto je dobré si dopředu naplánovat, co a kdy zasadit.
+            </p>
+
+            <ul class="season-nav">
+                <li><a class="season-nav__link season-nav__link--spring" href="#jaro">Jaro</a></li>
+                <li><a class="season-nav__link season-nav__link--summer" href="#leto">Léto</a></li>
+                <li><a class="season-nav__link season-nav__link--fall" href="#podzim">Podzim</a></li>
+                <li><a class="season-nav__link season-nav__link--winter" href="#zima">Zima</a></li>
+            </ul>
+
+            <p class="note">
+                Ceny jsou ve zlaťácích (g) a prodejní cena platí pro plodinu běžné kvality.
+                „Opakovaná sklizeň“ znamená, že rostlina po první sklizni plodí dál
+                a nemusíte ji sázet znovu.
+            </p>
+
+            <section class="season" id="jaro">
+                <h2 class="season__title season__title--spring">Jaro</h2>
+                <p>Jaro je ideální na rozjezd. Pastinák roste rychle a semínka dostanete hned první den, takže můžete začít okamžitě.</p>
+                <div class="table-wrap">
+                    <table class="table table--stack">
+                        <caption class="table__caption">Jarní plodiny</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Plodina</th>
+                                <th scope="col" class="table__num">Růst</th>
+                                <th scope="col">Opakovaná sklizeň</th>
+                                <th scope="col" class="table__num">Semínka</th>
+                                <th scope="col" class="table__num">Prodej</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/pastinak.png" width="48" height="48" alt="Ikona pastináku"> Pastinák</span></th>
+                                <td class="table__num" data-label="Růst">4 dny</td>
+                                <td data-label="Opakovaná sklizeň">ne</td>
+                                <td class="table__num" data-label="Semínka">20 g</td>
+                                <td class="table__num" data-label="Prodej">35 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/brambora.png" width="48" height="48" alt="Ikona brambory"> Brambora</span></th>
+                                <td class="table__num" data-label="Růst">6 dní</td>
+                                <td data-label="Opakovaná sklizeň">ne</td>
+                                <td class="table__num" data-label="Semínka">50 g</td>
+                                <td class="table__num" data-label="Prodej">80 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/kvetak.png" width="48" height="48" alt="Ikona květáku"> Květák</span></th>
+                                <td class="table__num" data-label="Růst">12 dní</td>
+                                <td data-label="Opakovaná sklizeň">ne</td>
+                                <td class="table__num" data-label="Semínka">80 g</td>
+                                <td class="table__num" data-label="Prodej">175 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/jahoda.png" width="48" height="48" alt="Ikona jahody"> Jahoda</span></th>
+                                <td class="table__num" data-label="Růst">8 dní</td>
+                                <td data-label="Opakovaná sklizeň">každé 4 dny</td>
+                                <td class="table__num" data-label="Semínka">100 g</td>
+                                <td class="table__num" data-label="Prodej">120 g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="season" id="leto">
+                <h2 class="season__title season__title--summer">Léto</h2>
+                <p>V létě se nejvíc vyplatí plodiny, které plodí opakovaně, a z nich hlavně borůvky.</p>
+                <div class="table-wrap">
+                    <table class="table table--stack">
+                        <caption class="table__caption">Letní plodiny</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Plodina</th>
+                                <th scope="col" class="table__num">Růst</th>
+                                <th scope="col">Opakovaná sklizeň</th>
+                                <th scope="col" class="table__num">Semínka</th>
+                                <th scope="col" class="table__num">Prodej</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/boruvka.png" width="48" height="48" alt="Ikona borůvky"> Borůvka</span></th>
+                                <td class="table__num" data-label="Růst">13 dní</td>
+                                <td data-label="Opakovaná sklizeň">každé 4 dny</td>
+                                <td class="table__num" data-label="Semínka">80 g</td>
+                                <td class="table__num" data-label="Prodej">50 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/meloun.png" width="48" height="48" alt="Ikona melounu"> Meloun</span></th>
+                                <td class="table__num" data-label="Růst">12 dní</td>
+                                <td data-label="Opakovaná sklizeň">ne</td>
+                                <td class="table__num" data-label="Semínka">80 g</td>
+                                <td class="table__num" data-label="Prodej">250 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/rajce.png" width="48" height="48" alt="Ikona rajčete"> Rajče</span></th>
+                                <td class="table__num" data-label="Růst">11 dní</td>
+                                <td data-label="Opakovaná sklizeň">každé 4 dny</td>
+                                <td class="table__num" data-label="Semínka">50 g</td>
+                                <td class="table__num" data-label="Prodej">60 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/paprika.png" width="48" height="48" alt="Ikona pálivé papriky"> Pálivá paprika</span></th>
+                                <td class="table__num" data-label="Růst">5 dní</td>
+                                <td data-label="Opakovaná sklizeň">každé 3 dny</td>
+                                <td class="table__num" data-label="Semínka">40 g</td>
+                                <td class="table__num" data-label="Prodej">40 g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="season" id="podzim">
+                <h2 class="season__title season__title--fall">Podzim</h2>
+                <p>Podzim je hlavně o dýních a brusinkách. Dýně se navíc hodí jako dárek pro Abigail, která je má moc ráda.</p>
+                <div class="table-wrap">
+                    <table class="table table--stack">
+                        <caption class="table__caption">Podzimní plodiny</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Plodina</th>
+                                <th scope="col" class="table__num">Růst</th>
+                                <th scope="col">Opakovaná sklizeň</th>
+                                <th scope="col" class="table__num">Semínka</th>
+                                <th scope="col" class="table__num">Prodej</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/dyne.png" width="48" height="48" alt="Ikona dýně"> Dýně</span></th>
+                                <td class="table__num" data-label="Růst">13 dní</td>
+                                <td data-label="Opakovaná sklizeň">ne</td>
+                                <td class="table__num" data-label="Semínka">100 g</td>
+                                <td class="table__num" data-label="Prodej">320 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/brusinky.png" width="48" height="48" alt="Ikona brusinek"> Brusinky</span></th>
+                                <td class="table__num" data-label="Růst">7 dní</td>
+                                <td data-label="Opakovaná sklizeň">každých 5 dní</td>
+                                <td class="table__num" data-label="Semínka">240 g</td>
+                                <td class="table__num" data-label="Prodej">75 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/lilek.png" width="48" height="48" alt="Ikona lilku"> Lilek</span></th>
+                                <td class="table__num" data-label="Růst">5 dní</td>
+                                <td data-label="Opakovaná sklizeň">každých 5 dní</td>
+                                <td class="table__num" data-label="Semínka">20 g</td>
+                                <td class="table__num" data-label="Prodej">60 g</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="table__crop"><img class="table__icon pixelated" src="images/plodiny/batat.png" width="48" height="48" alt="Ikona batátu"> Batát</span></th>
+                                <td class="table__num" data-label="Růst">10 dní</td>
+                                <td data-label="Opakovaná sklizeň">ne</td>
+                                <td class="table__num" data-label="Semínka">60 g</td>
+                                <td class="table__num" data-label="Prodej">160 g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="season" id="zima">
+                <h2 class="season__title season__title--winter">Zima</h2>
+                <img class="panel__icon pixelated" src="images/plodiny/zimni-seminka.png" width="48" height="48" alt="Ikona zimních semínek">
+                <p>
+                    V zimě venku běžné plodiny nerostou. Jedinou výjimkou jsou zimní semínka,
+                    která si vyrobíte z nasbíraných zimních plodů. Vyrostou za 7 dní a dají
+                    vám náhodnou zimní plodinu.
+                </p>
+                <p>
+                    Zimu je proto lepší využít jinak, třeba na doly, rybaření, budování
+                    vztahů s vesničany a přípravu farmy na jaro. Pokud už máte opravený
+                    skleník, můžete v něm pěstovat cokoliv po celý rok.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- ===== Komponenta: patička (stejná na všech stránkách) ===== -->
+    <footer class="footer">
+        <div class="page footer__inner">
+            <img class="footer__icon pixelated" src="images/ui/junimo.png" width="96" height="96" alt="Junimo">
+            <div>
+                <p class="footer__title">Stardew Valley – fanouškovský průvodce</p>
+                <p class="footer__text">Neoficiální fanouškovský web vytvořený jako semestrální práce předmětu 4IZ268 na VŠE. Hra Stardew Valley patří studiu ConcernedApe, web s ním není nijak spojen.</p>
+                <p class="footer__text"><a class="footer__link" href="zdroje.html">Zdroje obrázků a informací</a></p>
+                <p class="footer__text">&copy; 2026 Autor: <a class="footer__link" href="https://lukaspop.com/">Lukáš Pop</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

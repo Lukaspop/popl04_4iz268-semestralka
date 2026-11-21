@@ -1,0 +1,202 @@
+/* ==========================================================
+   Farmaření: tabulky plodin a roční období
+   Načítá se jen na stránce farmareni.html, společné styly jsou v globals.css.
+   ========================================================== */
+
+/* ==========================================================
+   Komponenta: tabulka (jen pro data, ne pro layout)
+   ========================================================== */
+
+.table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    background-color: #fffaf0;
+}
+
+.table__caption {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #d68a3c;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table thead th {
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    color: #fdf3d6;
+    background-color: #9a4f1c;
+    border-color: #5c2e0e;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f8ebc8;
+}
+
+/* Čísla zarovnaná vpravo, aby se dala porovnávat */
+.table .table__num {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Plodina s ikonkou v jedné buňce */
+.table__crop {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.table__icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Na mobilu se tabulka dá posouvat do strany */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* ==========================================================
+   Úzké obrazovky: každý řádek tabulky se změní na kartičku.
+   Popisek sloupce se bere z atributu data-label u buňky.
+   ========================================================== */
+
+@media (max-width: 600px) {
+    .table--stack,
+    .table--stack tbody,
+    .table--stack tr,
+    .table--stack th,
+    .table--stack td {
+        display: block;
+    }
+
+    /* Hlavička tabulky je skrytá jen vizuálně, čtečky ji pořád přečtou */
+    .table--stack thead {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .table--stack {
+        background-color: transparent;
+    }
+
+    /* Popisek tabulky přes celou šířku, jinak by se zalamoval po slovech */
+    .table--stack .table__caption {
+        display: block;
+    }
+
+    .table--stack tr {
+        margin-bottom: 0.75rem;
+        background-color: #fffaf0;
+        border: 2px solid #d68a3c;
+        border-radius: 4px;
+    }
+
+    .table--stack tbody tr:nth-child(even) {
+        background-color: #fffaf0;
+    }
+
+    .table--stack th,
+    .table--stack td {
+        border: 0;
+    }
+
+    .table--stack th {
+        background-color: #f3e0b0;
+        border-bottom: 2px solid #d68a3c;
+    }
+
+    /* Buňka = popisek vlevo, hodnota vpravo */
+    .table--stack td {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.35rem 0.75rem;
+        border-bottom: 1px dotted #d68a3c;
+    }
+
+    .table--stack td:last-child {
+        border-bottom: 0;
+    }
+
+    .table--stack td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-align: left;
+    }
+}
+
+/* ==========================================================
+   Komponenta: roční období (rozcestník a štítky sezón)
+   ========================================================== */
+
+.season-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.season-nav__link {
+    display: block;
+    padding: 0.35rem 0.9rem;
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    color: #3b2412;
+    border: 3px solid #5c2e0e;
+    border-radius: 4px;
+}
+
+.season {
+    margin-top: 2rem;
+}
+
+/* Nadpis sezóny s barevným proužkem vlevo */
+.season__title {
+    padding-left: 0.75rem;
+    border-left: 10px solid #3f7d20;
+}
+
+/* Barvy jednotlivých sezón */
+.season-nav__link--spring {
+    background-color: #c9eb9a;
+}
+
+.season-nav__link--summer {
+    background-color: #fbe48a;
+}
+
+.season-nav__link--fall {
+    background-color: #f6b97a;
+}
+
+.season-nav__link--winter {
+    background-color: #c4e3f7;
+}
+
+.season__title--spring {
+    border-left-color: #6aab2e;
+}
+
+.season__title--summer {
+    border-left-color: #e2b40f;
+}
+
+.season__title--fall {
+    border-left-color: #d0661a;
+}
+
+.season__title--winter {
+    border-left-color: #5aa6d6;
+}
+

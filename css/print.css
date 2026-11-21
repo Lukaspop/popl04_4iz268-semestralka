@@ -1,0 +1,176 @@
+/* ==========================================================
+   Styly pro tisk
+   Načítá se až po style.css a jen pro media="print"
+   ========================================================== */
+
+@page {
+    margin: 60px;
+}
+
+body {
+    color: #000000;
+    background: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Věci, které na papíře nemají smysl */
+.nav,
+.skip-link,
+.season-nav,
+.card__link,
+.footer__icon {
+    display: none;
+}
+
+/* Identifikace webu zůstává i na papíře: logo + podtitul */
+.header {
+    background: none;
+    border-bottom: 2px solid #000000;
+    box-shadow: none;
+}
+
+.header__inner {
+    padding: 0 0 0.5em 0;
+}
+
+.header__logo {
+    height: 60px;
+}
+
+.header__tagline {
+    color: #000000;
+    text-shadow: none;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.page {
+    max-width: none;
+    padding: 0;
+}
+
+/* Sloupce pod sebe */
+.layout {
+    display: block;
+    padding: 1em 0;
+}
+
+/* Rámečky a pozadí na papír nepatří */
+.panel,
+.card,
+.villager,
+.tip,
+.gallery__figure {
+    background: none;
+    border: 1px solid #000000;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.panel {
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+}
+
+.villagers,
+.cards,
+.gallery {
+    display: block;
+}
+
+.villager,
+.card,
+.tip,
+.gallery__item {
+    margin-bottom: 0.75em;
+}
+
+.gallery__img,
+.figure__img {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    border: 1px solid #000000;
+}
+
+.figure--right {
+    width: auto;
+}
+
+.tip::before {
+    color: #000000;
+    background: none;
+    border: 1px solid #000000;
+}
+
+h1,
+h2,
+h3,
+.facts__term,
+.timeline__year {
+    color: #000000;
+    page-break-after: avoid;
+}
+
+h2 {
+    border-bottom: 1px solid #000000;
+}
+
+.season__title {
+    border-left-color: #000000;
+}
+
+.timeline {
+    border-left-color: #000000;
+}
+
+/* Odkazy: černé, podtržené a s vypsanou adresou */
+a {
+    color: #000000;
+    background: none;
+}
+
+.layout a[href^="http"]::after,
+.footer a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+}
+
+figure,
+img,
+table,
+tr,
+.villager,
+.tip {
+    page-break-inside: avoid;
+}
+
+.table,
+.table tbody tr:nth-child(even) {
+    background: none;
+}
+
+.table thead th {
+    color: #000000;
+    background: none;
+    border-bottom: 2px solid #000000;
+}
+
+.table th,
+.table td {
+    border: 1px solid #000000;
+}
+
+.footer {
+    color: #000000;
+    background: none;
+    border-top: 2px solid #000000;
+}
+
+.footer__link {
+    color: #000000;
+}

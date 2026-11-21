@@ -1,0 +1,40 @@
+/* ==========================================================
+   O hře: časová osa
+   Načítá se jen na stránce o-hre.html, společné styly jsou v globals.css.
+   ========================================================== */
+
+/* ==========================================================
+   Komponenta: časová osa (svislá čára s tečkami)
+   ========================================================== */
+
+.timeline {
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    list-style: none;
+    border-left: 3px solid #d68a3c;
+}
+
+.timeline__item {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+/* Čtverečková „pixelová“ tečka na ose */
+.timeline__item::before {
+    content: "";
+    position: absolute;
+    left: -1.75rem;
+    top: 0.3rem;
+    width: 12px;
+    height: 12px;
+    background-color: #3f7d20;
+    border: 2px solid #5c2e0e;
+}
+
+.timeline__year {
+    display: block;
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    color: #5c2e0e;
+}
+

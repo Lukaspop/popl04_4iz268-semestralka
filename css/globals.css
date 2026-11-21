@@ -1,0 +1,477 @@
+/* ==========================================================
+   Stardew Valley – fanouškovský průvodce
+   globals.css: styly společné pro všechny stránky
+   (základ, rozložení, hlavička, menu, panel, obrázek, patička).
+   Styly konkrétních stránek jsou ve složce pages/.
+   ========================================================== */
+
+/* ==========================================================
+   Základní styly celé stránky
+
+   Barvy (pro přehled):
+   tmavé dřevo    #5c2e0e
+   střední dřevo  #9a4f1c
+   světlé dřevo   #d68a3c
+   papír          #fdf3d6
+   tmavší papír   #f3e0b0
+   text           #3b2412
+   tráva          #5d8a2f
+   ========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #3b2412;
+    /* tráva: zelená barva + jemná pixelová šachovnice */
+    background-color: #5d8a2f;
+    background-image:
+        linear-gradient(45deg, #578229 25%, transparent 25%, transparent 75%, #578229 75%),
+        linear-gradient(45deg, #578229 25%, transparent 25%, transparent 75%, #578229 75%);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Pixel art se při zvětšení nemá rozmazat */
+.pixelated {
+    image-rendering: pixelated;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #5c2e0e;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.25rem;
+}
+
+h2 {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 3px dashed #d68a3c;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+/* Odkazy jsou vždy podtržené, aby byly jasně odlišené od textu */
+a {
+    color: #8a3b0a;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+    color: #3b2412;
+    background-color: #f6d58a;
+}
+
+a:focus {
+    outline: 3px solid #3b2412;
+    outline-offset: 2px;
+}
+
+/* Kontejner, který drží obsah uprostřed stránky */
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Odkaz pro přeskočení navigace, ukáže se jen při ovládání klávesnicí */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+}
+
+.skip-link:focus {
+    left: 16px;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    background-color: #fdf3d6;
+}
+
+/* Úvodní odstavec pod nadpisem */
+.lead {
+    font-size: 1.15rem;
+}
+
+/* Drobná poznámka */
+.note {
+    font-size: 0.9rem;
+    color: #6b4a2e;
+}
+
+/* Zruší obtékání plovoucího obrázku */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* ==========================================================
+   Rozložení stránky: hlavní obsah + postranní sloupec
+   ========================================================== */
+
+.layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+/* Hlavní obsah zabere všechno místo, které zbude */
+.layout__main {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* Postranní sloupec má pevnou šířku */
+.layout__aside {
+    flex: 0 0 18rem;
+}
+
+/* Na úzké obrazovce jsou sloupce pod sebou */
+@media (max-width: 760px) {
+    .layout {
+        display: block;
+        padding-top: 1rem;
+    }
+
+    .layout__aside {
+        margin-top: 1.5rem;
+    }
+}
+
+/* ==========================================================
+   Komponenta: hlavička s logem a menu na pixelové obloze
+   Barvy oblohy jsou převzaté z úvodní obrazovky hry,
+   mraky jsou obrázky ze hry zvětšené 2× bez rozmazání.
+   ========================================================== */
+
+.header {
+    image-rendering: pixelated;
+    background-color: #59d7e8;
+    background-image:
+        url("../images/ui/mrak-1.png"),
+        url("../images/ui/mrak-2.png"),
+        url("../images/ui/mrak-1.png"),
+        url("../images/ui/mrak-2.png"),
+        /* obloha po pruzích 24 px, aby přechod vypadal pixelově */
+        linear-gradient(
+            #0372db 0, #0372db 24px,
+            #047bec 24px, #047bec 48px,
+            #0785f7 48px, #0785f7 72px,
+            #1a91f9 72px, #1a91f9 96px,
+            #2ba0f7 96px, #2ba0f7 120px,
+            #39acf4 120px, #39acf4 144px,
+            #45baf0 144px, #45baf0 168px,
+            #4fc8ec 168px, #4fc8ec 192px,
+            #59d7e8 192px
+        );
+    background-size:
+        180px 126px,
+        186px 138px,
+        180px 126px,
+        186px 138px,
+        auto;
+    background-position:
+        left 2rem top 3.5rem,
+        center top 0.5rem,
+        right 22rem top 5rem,
+        right 1.5rem top 0.25rem,
+        0 0;
+    background-repeat: no-repeat;
+    /* tráva pod oblohou */
+    border-bottom: 8px solid #4a8a26;
+    box-shadow: 0 4px 0 #2f5e17;
+}
+
+/* Obrázky uvnitř hlavičky se vykreslují normálně */
+.header img {
+    image-rendering: auto;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.header__logo-link {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.header__logo-link:hover,
+.header__logo-link:focus {
+    background-color: transparent;
+}
+
+.header__logo {
+    width: auto;
+    height: 96px;
+    filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.25));
+}
+
+/* Podtitul vypadá jako dřevěná cedule, stejně jako položky menu */
+.header__tagline {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-size: 1.1rem;
+    color: #fdf3d6;
+    text-shadow: 2px 2px 0 #5c2e0e;
+    background-color: #a8561f;
+    border: 3px solid #5c2e0e;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 2px #d68a3c, inset 0 -4px 0 #8a4518, 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 700px) {
+    .header__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header__logo {
+        height: 72px;
+    }
+
+    .header__tagline {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================
+   Komponenta: hlavní navigace
+   Každá položka je samostatná dřevěná cedulka jako tlačítka
+   v herním menu. Lišta sama nemá pozadí, je vidět obloha.
+   ========================================================== */
+
+.nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem;
+    list-style: none;
+}
+
+.nav__link {
+    display: block;
+    padding: 0.4rem 1rem 0.5rem 1rem;
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fdf3d6;
+    text-decoration: none;
+    text-shadow: 2px 2px 0 #5c2e0e;
+    /* dřevo: základní barva + jemná léta po 6 px */
+    background-color: #a8561f;
+    background-image: repeating-linear-gradient(#a8561f 0, #a8561f 4px, #9e511d 4px, #9e511d 6px);
+    border: 3px solid #5c2e0e;
+    border-radius: 4px;
+    /* světlý vnitřní okraj, tmavší spodek a stín pod cedulkou */
+    box-shadow: inset 0 0 0 2px #d68a3c, inset 0 -4px 0 #8a4518, 0 4px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+/* Po najetí se cedulka lehce zvedne */
+.nav__link:hover,
+.nav__link:focus {
+    color: #fdf3d6;
+    background-color: #b8622a;
+    background-image: repeating-linear-gradient(#b8622a 0, #b8622a 4px, #ad5b26 4px, #ad5b26 6px);
+    text-decoration: underline;
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 0 2px #e8a65a, inset 0 -4px 0 #8a4518, 0 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Aktivní položka: světlá cedulka jako vybrané tlačítko */
+.nav__link--active,
+.nav__link--active:hover,
+.nav__link--active:focus {
+    color: #5c2e0e;
+    text-shadow: none;
+    background-color: #fdf3d6;
+    background-image: none;
+    box-shadow: inset 0 0 0 2px #f3c27a, inset 0 -4px 0 #e6c88c, 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 700px) {
+    .nav__list {
+        gap: 0.4rem;
+    }
+
+    .nav__link {
+        padding: 0.3rem 0.7rem 0.4rem 0.7rem;
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================
+   Komponenta: panel (rámeček jako herní menu)
+   ========================================================== */
+
+.panel {
+    padding: 1.75rem;
+    background-color: #fdf3d6;
+    border: 4px solid #5c2e0e;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 4px #d68a3c, 0 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Menší panel do postranního sloupce */
+.panel--side {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+}
+
+.panel__title {
+    margin-top: 0;
+    font-size: 1.35rem;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Ikonka vedle nadpisu panelu */
+.panel__icon {
+    float: right;
+    width: 48px;
+    height: 48px;
+    margin: 0 0 0.5rem 0.5rem;
+}
+
+@media (max-width: 700px) {
+    .panel {
+        padding: 1.25rem;
+    }
+}
+
+/* ==========================================================
+   Komponenta: obrázek s popiskem
+   ========================================================== */
+
+.figure {
+    margin: 1.5rem 0;
+}
+
+.figure__img {
+    width: 100%;
+    border: 4px solid #5c2e0e;
+    border-radius: 4px;
+}
+
+.figure__caption {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: #6b4a2e;
+}
+
+/* Obrázek vpravo, text ho obtéká */
+.figure--right {
+    float: right;
+    width: 18rem;
+    margin: 0.25rem 0 1rem 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .figure--right {
+        float: none;
+        width: auto;
+        margin: 1rem 0;
+    }
+}
+
+/* ==========================================================
+   Komponenta: patička (tmavé dřevo)
+   ========================================================== */
+
+.footer {
+    color: #fdf3d6;
+    background-color: #5c2e0e;
+    border-top: 6px solid #9a4f1c;
+    font-size: 0.9rem;
+}
+
+.footer__inner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.footer__icon {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+}
+
+.footer__title {
+    margin: 0 0 0.25rem 0;
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.footer__text {
+    margin: 0 0 0.25rem 0;
+}
+
+.footer__link {
+    color: #f6d58a;
+}
+
+.footer__link:hover,
+.footer__link:focus {
+    color: #3b2412;
+}
+
+/* Odkaz na stránku, na které právě jsem */
+.footer__link--active {
+    font-weight: 700;
+}
+

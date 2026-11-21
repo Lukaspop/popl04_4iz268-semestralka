@@ -1,0 +1,74 @@
+/* ==========================================================
+   Úvod: karty rozcestníku a rychlá fakta
+   Načítá se jen na stránce index.html, společné styly jsou v globals.css.
+   ========================================================== */
+
+/* ==========================================================
+   Komponenta: karty (rozcestník na úvodní stránce)
+   ========================================================== */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    flex: 1 1 13rem;
+    padding: 1rem;
+    background-color: #f3e0b0;
+    border: 3px solid #9a4f1c;
+    border-radius: 6px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 rgba(92, 46, 14, 0.3);
+}
+
+.card__icon {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 0.75rem;
+}
+
+.card__title {
+    margin: 0.5rem 0 1rem 0;
+}
+
+.card__text {
+    clear: both;
+    margin: 0 0 0.75rem 0;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================
+   Komponenta: rychlá fakta (seznam definic)
+   ========================================================== */
+
+.facts {
+    margin: 0;
+}
+
+.facts__term {
+    font-family: "Pixelify Sans", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    color: #5c2e0e;
+}
+
+.facts__value {
+    margin: 0 0 0.6rem 0;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px dotted #d68a3c;
+}
+
+.facts__value:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
